@@ -38,7 +38,7 @@ Các thành phần chính của bài toán tìm kiếm và solution:
 
 - Solution (Giải pháp): Một đường đi (path) từ trạng thái ban đầu đến trạng thái đích.  Chi phí của một đường đi là tổng chi phí các bước di chuyển trong đường đi đó.    
 
-Một vài nhận xét về hiệu suất của các thuật toán trong nhóm này khi áp dụng lên trò chơi:
+Hiệu suất của thuật toán đã chọn trong nhóm này khi áp dụng lên trò chơi:
 
 BFS (Breadth-First Search - Tìm kiếm theo chiều rộng):
 
@@ -53,13 +53,13 @@ Các thành phần chính của bài toán tìm kiếm và solution:
 
 - Điểm khác biệt chính: Thuật toán tìm kiếm có thông tin sử dụng thêm hàm heuristic (Heuristic Function) để ước tính chi phí từ trạng thái hiện tại đến trạng thái đích.  Hàm heuristic cung cấp một "ước đoán thông minh", giúp thuật toán ưu tiên các đường đi có khả năng dẫn đến mục tiêu nhanh hơn.  Trong dự án này, hàm heuristic được sử dụng là khoảng cách Manhattan.    
 
-Một vài nhận xét về hiệu suất của các thuật toán trong nhóm này khi áp dụng lên trò chơi:
+Hiệu suất của thuật toán đã chọn trong nhóm này khi áp dụng lên trò chơi:
 A (A Star):*
 
 - Ưu điểm: A* thường được ưu tiên vì nó có thể tìm ra đường đi ngắn nhất (hoặc đường đi có chi phí thấp nhất) một cách hiệu quả hơn so với BFS, đặc biệt là trong các bản đồ lớn và phức tạp, nơi có nhiều ngóc ngách và đường đi khác nhau.  Trong dự án, thuật toán A* hoạt động hiệu quả, giúp quái vật di chuyển một cách thông minh và tiết kiệm tài nguyên hệ thống.    
 - A* sử dụng hàng đợi ưu tiên để lưu trữ các vị trí cần xét, với ưu tiên xác định bởi tổng chi phí đã đi (g) và chi phí ước tính đến đích (h).
   
-3. Kết luận
+# 3. Kết luận
 Một số kết quả đạt được khi thực hiện project này:
 
 - Xây dựng thành công trò chơi cơ bản bằng Pygame với các chức năng cốt lõi như di chuyển nhân vật, chiến đấu, thu thập vật phẩm và điều hướng menu.    
