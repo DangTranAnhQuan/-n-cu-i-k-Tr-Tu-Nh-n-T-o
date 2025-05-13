@@ -58,7 +58,45 @@ A (A Star):*
 
 - Ưu điểm: A* thường được ưu tiên vì nó có thể tìm ra đường đi ngắn nhất (hoặc đường đi có chi phí thấp nhất) một cách hiệu quả hơn so với BFS, đặc biệt là trong các bản đồ lớn và phức tạp, nơi có nhiều ngóc ngách và đường đi khác nhau.  Trong dự án, thuật toán A* hoạt động hiệu quả, giúp quái vật di chuyển một cách thông minh và tiết kiệm tài nguyên hệ thống.    
 - A* sử dụng hàng đợi ưu tiên để lưu trữ các vị trí cần xét, với ưu tiên xác định bởi tổng chi phí đã đi (g) và chi phí ước tính đến đích (h).
-  
+
+# 2.3. Các thuật toán Tìm kiếm cục bộ (Local Search)
+Thuật toán được chọn: Steepest Ascent Hill Climbing (Leo đồi dốc nhất)
+
+Bản chất: Là một thuật toán tìm kiếm cục bộ, cố gắng cải thiện giải pháp hiện tại bằng cách thực hiện các bước đi đến trạng thái lân cận tốt nhất một cách lặp đi lặp lại, dựa trên hàm heuristic (ví dụ: khoảng cách Manhattan). Nó không khám phá toàn bộ không gian trạng thái.
+
+Hiệu suất và ứng dụng trong trò chơi:
+- Ưu điểm: Đơn giản để triển khai, ít tốn bộ nhớ hơn A* hay BFS. Có thể phản ứng nhanh và tìm ra hướng di chuyển hợp lý tức thời trong một số trường hợp.
+
+- Nhược điểm: Rất dễ bị kẹt ở các điểm tối ưu cục bộ (ví dụ: quái vật đi vào ngõ cụt dù có đường vòng tốt hơn ở xa). Không đảm bảo tìm ra đường đi tối ưu toàn cục hoặc thậm chí tìm được đường đi trong mọi trường hợp phức tạp. Trong dự án, thuật toán này gặp một số lỗi với quái vật bay do không gian trạng thái lớn và không được chọn làm thuật toán tìm đường chính.
+
+# 2.4. Các thuật toán Tìm kiếm trong môi trường phức tạp
+Thuật toán được chọn: And Or Search (Tìm kiếm AND-OR)
+
+Bản chất: Được thiết kế cho các bài toán có thể phân rã thành các bài toán con, với một số yêu cầu tất cả các thành phần con phải được giải quyết (AND), trong khi số khác chỉ cần một lựa chọn được giải quyết (OR).
+
+Hiệu suất và ứng dụng trong trò chơi:
+- Ưu điểm: Mạnh mẽ cho các bài toán có cấu trúc phân rã AND-OR rõ ràng (ví dụ: lập kế hoạch phức tạp).
+
+- Nhược điểm: Bài toán tìm đường của một quái vật đơn lẻ thường là chuỗi các lựa chọn OR, không có cấu trúc AND phức tạp. Việc áp dụng And-Or Search có thể trở nên phức tạp không cần thiết và kém hiệu quả hơn A* cho việc tìm đường đơn thuần. Trong dự án, thuật toán này bị giới hạn không gian tìm kiếm, hiệu suất không tốt và gây giật lag, không phù hợp cho hành vi di chuyển chính của quái vật.
+
+# 2.5. Các thuật toán Tìm kiếm trong môi trường có ràng buộc
+Thuật toán được chọn: Backtracking
+Bản chất: Một kỹ thuật giải thuật giải quyết các Bài toán Thỏa mãn Ràng buộc (CSPs) bằng cách xây dựng từng bước các ứng cử viên cho lời giải và loại bỏ những ứng cử viên không thể hoàn thành thành một lời giải hợp lệ.
+
+Hiệu suất và ứng dụng trong trò chơi:
+- Ưu điểm: Có thể tìm được tất cả các nghiệm và hiệu quả trong các bài toán có không gian tìm kiếm nhỏ. Có thể hữu ích cho việc tạo màn chơi theo ràng buộc.
+
+- Nhược điểm: Bài toán tìm đường của quái vật đòi hỏi quyết định nhanh chóng trong thời gian thực. Backtracking, với bản chất thử và sai, có thể không đủ hiệu quả. Việc mô hình hóa bài toán tìm đường như một CSP có thể phức tạp và không tự nhiên bằng các thuật toán tìm đường chuyên dụng. Trong dự án, nó không được xem là giải pháp chính cho tìm đường của quái vật do yêu cầu về tốc độ.
+
+# 2.6. Thuật toán học tăng cường (Reinforcement Learning)
+Thuật toán được chọn: Q-Learning
+Bản chất: Một thuật toán học tăng cường không cần mô hình để học một chiến lược hành động tối ưu. Agent (quái vật) học một hàm Q(s, a) đại diện cho "chất lượng" của việc thực hiện hành động 'a' trong trạng thái 's' thông qua tương tác với môi trường và nhận phần thưởng/hình phạt.
+
+Hiệu suất và ứng dụng trong trò chơi:
+- Ưu điểm: Không cần mô hình môi trường trước và có thể học các chiến lược phức tạp.
+
+- Nhược điểm: Đòi hỏi lượng lớn dữ liệu (tương tác) để học các giá trị Q tối ưu, có thể tốn thời gian và tài nguyên trong môi trường trò chơi thời gian thực. Việc xác định hàm phần thưởng phù hợp và các tham số (tốc độ học, hệ số chiết khấu) đòi hỏi thử nghiệm kỹ lưỡng. Trong dự án, do phạm vi và yêu cầu về giải pháp tìm đường trực tiếp, Q-Learning không được triển khai làm thuật toán chính cho việc tìm đường của quái vật, dù được nghiên cứu về khả năng áp dụng.
+
 # 3. Kết luận
 Một số kết quả đạt được khi thực hiện project này:
 
