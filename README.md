@@ -38,6 +38,8 @@ Các thành phần chính của bài toán tìm kiếm và solution:
 
 - Solution (Giải pháp): Một đường đi (path) từ trạng thái ban đầu đến trạng thái đích.  Chi phí của một đường đi là tổng chi phí các bước di chuyển trong đường đi đó.    
 
+Lý do chọn thuật toán BFS vì thuật toán đảm bảo tìm ra đường đi ngắn nhất về số bước, hữu ích trong việc kiểm tra tính kết nối hoặc trên các bản đồ nhỏ hơn nơi chi phí tính toán không quá lớn.
+
 Hiệu suất của thuật toán đã chọn trong nhóm này khi áp dụng lên trò chơi:
 
 BFS (Breadth-First Search - Tìm kiếm theo chiều rộng):
@@ -53,6 +55,8 @@ Các thành phần chính của bài toán tìm kiếm và solution:
 
 - Điểm khác biệt chính: Thuật toán tìm kiếm có thông tin sử dụng thêm hàm heuristic (Heuristic Function) để ước tính chi phí từ trạng thái hiện tại đến trạng thái đích.  Hàm heuristic cung cấp một "ước đoán thông minh", giúp thuật toán ưu tiên các đường đi có khả năng dẫn đến mục tiêu nhanh hơn.  Trong dự án này, hàm heuristic được sử dụng là khoảng cách Manhattan.    
 
+Thuật toán A* được lựa chọn vì khả năng tìm đường đi ngắn nhất (hoặc chi phí thấp nhất) một cách hiệu quả bằng cách sử dụng hàm heuristic để định hướng quá trình tìm kiếm. Trong trò chơi, điều này giúp quái vật di chuyển một cách thông minh và tự nhiên hơn, tránh việc khám phá các khu vực không cần thiết.
+
 Hiệu suất của thuật toán đã chọn trong nhóm này khi áp dụng lên trò chơi:
 A (A Star):*
 
@@ -61,6 +65,8 @@ A (A Star):*
 
 # 2.3. Các thuật toán Tìm kiếm cục bộ (Local Search)
 Thuật toán được chọn: Steepest Ascent Hill Climbing (Leo đồi dốc nhất)
+
+Lý do chọn: Thuật toán này tìm kiếm cục bộ, cố gắng di chuyển đến trạng thái lân cận tốt nhất dựa trên hàm heuristic. Nó có thể được xem xét cho các hành vi AI rất đơn giản, ví dụ như quái vật chỉ di chuyển một bước theo hướng tốt nhất tức thời mà không cần lập kế hoạch đường đi dài.
 
 Bản chất: Là một thuật toán tìm kiếm cục bộ, cố gắng cải thiện giải pháp hiện tại bằng cách thực hiện các bước đi đến trạng thái lân cận tốt nhất một cách lặp đi lặp lại, dựa trên hàm heuristic (ví dụ: khoảng cách Manhattan). Nó không khám phá toàn bộ không gian trạng thái.
 
@@ -72,24 +78,32 @@ Hiệu suất và ứng dụng trong trò chơi:
 # 2.4. Các thuật toán Tìm kiếm trong môi trường phức tạp
 Thuật toán được chọn: And Or Search (Tìm kiếm AND-OR)
 
+Lý do chọn: Thuật toán này mạnh cho các bài toán có thể phân rã thành các bài toán con với điều kiện AND và OR.
+
 Bản chất: Được thiết kế cho các bài toán có thể phân rã thành các bài toán con, với một số yêu cầu tất cả các thành phần con phải được giải quyết (AND), trong khi số khác chỉ cần một lựa chọn được giải quyết (OR).
 
 Hiệu suất và ứng dụng trong trò chơi:
 - Ưu điểm: Mạnh mẽ cho các bài toán có cấu trúc phân rã AND-OR rõ ràng (ví dụ: lập kế hoạch phức tạp).
 
-- Nhược điểm: Bài toán tìm đường của một quái vật đơn lẻ thường là chuỗi các lựa chọn OR, không có cấu trúc AND phức tạp. Việc áp dụng And-Or Search có thể trở nên phức tạp không cần thiết và kém hiệu quả hơn A* cho việc tìm đường đơn thuần. Trong dự án, thuật toán này bị giới hạn không gian tìm kiếm, hiệu suất không tốt và gây giật lag, không phù hợp cho hành vi di chuyển chính của quái vật.
+- Nhược điểm: Bài toán tìm đường của một quái vật đơn lẻ thường là chuỗi các lựa chọn OR, không có cấu trúc AND phức tạp. Việc áp dụng And-Or Search có thể trở nên phức tạp không cần thiết và kém hiệu quả hơn A* cho việc tìm đường đơn thuần. Trong dự án, thuật toán này bị giới hạn không gian tìm kiếm, hiệu suất không tốt và gây giật lag khi gặp quái vật dạng bay.
 
 # 2.5. Các thuật toán Tìm kiếm trong môi trường có ràng buộc
 Thuật toán được chọn: Backtracking
+
+Lý do chọn: Thuật toán Backtracking có thể được áp dụng để giải quyết các bài toán thỏa mãn ràng buộc (Constraint Satisfaction Problems - CSPs) trong trò chơi. Ví dụ: tạo màn chơi theo ràng buộc (đảm bảo các yếu tố màn chơi như vị trí quái vật, vật phẩm, địa hình thỏa mãn các điều kiện thiết kế) hoặc lập kế hoạch hành động cho quái vật.
+
 Bản chất: Một kỹ thuật giải thuật giải quyết các Bài toán Thỏa mãn Ràng buộc (CSPs) bằng cách xây dựng từng bước các ứng cử viên cho lời giải và loại bỏ những ứng cử viên không thể hoàn thành thành một lời giải hợp lệ.
 
 Hiệu suất và ứng dụng trong trò chơi:
 - Ưu điểm: Có thể tìm được tất cả các nghiệm và hiệu quả trong các bài toán có không gian tìm kiếm nhỏ. Có thể hữu ích cho việc tạo màn chơi theo ràng buộc.
 
-- Nhược điểm: Bài toán tìm đường của quái vật đòi hỏi quyết định nhanh chóng trong thời gian thực. Backtracking, với bản chất thử và sai, có thể không đủ hiệu quả. Việc mô hình hóa bài toán tìm đường như một CSP có thể phức tạp và không tự nhiên bằng các thuật toán tìm đường chuyên dụng. Trong dự án, nó không được xem là giải pháp chính cho tìm đường của quái vật do yêu cầu về tốc độ.
+- Nhược điểm: Bài toán tìm đường của quái vật đòi hỏi quyết định nhanh chóng trong thời gian thực. Backtracking, với bản chất thử và sai, có thể không đủ hiệu quả. Việc mô hình hóa bài toán tìm đường như một CSP có thể phức tạp và không tự nhiên bằng các thuật toán tìm đường chuyên dụng. Trong dự án, nó không được xem là giải pháp chính cho tìm đường của quái vật do yêu cầu về tốc độ và có thể vẽ ra đường đi, tuy nhiên cũng gặp tình trạng giật lag khi tiếp cận quái vật dạng bay theo hướng bên dưới và bên trên.
 
 # 2.6. Thuật toán học tăng cường (Reinforcement Learning)
 Thuật toán được chọn: Q-Learning
+
+Lý do chọn: Thuật toán Q-Learning (một thuật toán học tăng cường) có thể được áp dụng để huấn luyện hành vi của quái vật. Ví dụ: quái vật có thể học các chiến lược chiến đấu hiệu quả hoặc học cách di chuyển tối ưu trong các môi trường phức tạp.
+
 Bản chất: Một thuật toán học tăng cường không cần mô hình để học một chiến lược hành động tối ưu. Agent (quái vật) học một hàm Q(s, a) đại diện cho "chất lượng" của việc thực hiện hành động 'a' trong trạng thái 's' thông qua tương tác với môi trường và nhận phần thưởng/hình phạt.
 
 Hiệu suất và ứng dụng trong trò chơi:
