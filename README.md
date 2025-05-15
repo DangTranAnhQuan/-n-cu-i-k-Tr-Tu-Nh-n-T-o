@@ -48,6 +48,10 @@ BFS (Breadth-First Search - Tìm kiếm theo chiều rộng):
 
 - Nhược điểm: Có thể tốn kém hơn về mặt tài nguyên bộ nhớ so với các thuật toán có thông tin như A*, đặc biệt là trong các bản đồ có nhiều nhánh và đường đi khác nhau, vì nó cần lưu trữ tất cả các vị trí đã được khám phá.
 
+Dưới đây là 2 ảnh gif của thuật toán BFS tương ứng với 2 kiểu di chuyển của quái vật:
+![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-Normal_Enemy.gif)
+
+![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-FlyingDemon.gif)
 # 2.2. Các thuật toán Tìm kiếm có thông tin
 Các thành phần chính của bài toán tìm kiếm và solution:
 
@@ -63,6 +67,10 @@ A (A Star):*
 - Ưu điểm: A* thường được ưu tiên vì nó có thể tìm ra đường đi ngắn nhất (hoặc đường đi có chi phí thấp nhất) một cách hiệu quả hơn so với BFS, đặc biệt là trong các bản đồ lớn và phức tạp, nơi có nhiều ngóc ngách và đường đi khác nhau.  Trong dự án, thuật toán A* hoạt động hiệu quả, giúp quái vật di chuyển một cách thông minh và tiết kiệm tài nguyên hệ thống.    
 - A* sử dụng hàng đợi ưu tiên để lưu trữ các vị trí cần xét, với ưu tiên xác định bởi tổng chi phí đã đi (g) và chi phí ước tính đến đích (h).
 
+Dưới đây là 2 ảnh gif của thuật toán A* tương ứng với 2 kiểu di chuyển của quái vật:
+![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Star-Normal_Enemy.gif)
+
+![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Start-FlyingDemon.gif)
 # 2.3. Các thuật toán Tìm kiếm cục bộ (Local Search)
 Thuật toán được chọn: Steepest Ascent Hill Climbing (Leo đồi dốc nhất)
 
@@ -74,6 +82,10 @@ Hiệu suất và ứng dụng trong trò chơi:
 - Ưu điểm: Đơn giản để triển khai, ít tốn bộ nhớ hơn A* hay BFS. Có thể phản ứng nhanh và tìm ra hướng di chuyển hợp lý tức thời trong một số trường hợp.
 
 - Nhược điểm: Rất dễ bị kẹt ở các điểm tối ưu cục bộ (ví dụ: quái vật đi vào ngõ cụt dù có đường vòng tốt hơn ở xa). Không đảm bảo tìm ra đường đi tối ưu toàn cục hoặc thậm chí tìm được đường đi trong mọi trường hợp phức tạp. Trong dự án, thuật toán này gặp một số lỗi với quái vật bay do không gian trạng thái lớn và không được chọn làm thuật toán tìm đường chính.
+
+Dưới đây là 2 ảnh gif của thuật toán Steepest Ascent Hill Climbing tương ứng với 2 kiểu di chuyển của quái vật:
+![Steepest Ascent Hill Climbing](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Stepest_HC-Normal_Enemy.gif)
+
 
 # 2.4. Các thuật toán Tìm kiếm trong môi trường phức tạp
 Thuật toán được chọn: And Or Search (Tìm kiếm AND-OR)
