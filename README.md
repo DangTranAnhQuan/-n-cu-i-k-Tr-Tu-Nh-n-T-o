@@ -99,6 +99,10 @@ Hiệu suất và ứng dụng trong trò chơi:
 
 - Nhược điểm: Bài toán tìm đường của một quái vật đơn lẻ thường là chuỗi các lựa chọn OR, không có cấu trúc AND phức tạp. Việc áp dụng And-Or Search có thể trở nên phức tạp không cần thiết và kém hiệu quả hơn A* cho việc tìm đường đơn thuần. Trong dự án, thuật toán này bị giới hạn không gian tìm kiếm, hiệu suất không tốt và gây giật lag khi gặp quái vật dạng bay.
 
+Dưới đây là 2 ảnh gif của thuật toán And Or Search tương ứng với 2 kiểu di chuyển của quái vật:
+![AndOrSearch](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/And_Or-Normal_Enemy.gif)
+
+
 # 2.5. Các thuật toán Tìm kiếm trong môi trường có ràng buộc
 Thuật toán được chọn: Backtracking
 
@@ -111,6 +115,9 @@ Hiệu suất và ứng dụng trong trò chơi:
 
 - Nhược điểm: Bài toán tìm đường của quái vật đòi hỏi quyết định nhanh chóng trong thời gian thực. Backtracking, với bản chất thử và sai, có thể không đủ hiệu quả. Việc mô hình hóa bài toán tìm đường như một CSP có thể phức tạp và không tự nhiên bằng các thuật toán tìm đường chuyên dụng. Trong dự án, nó không được xem là giải pháp chính cho tìm đường của quái vật do yêu cầu về tốc độ và có thể vẽ ra đường đi, tuy nhiên cũng gặp tình trạng giật lag khi tiếp cận quái vật dạng bay theo hướng bên dưới và bên trên.
 
+Dưới đây là 2 ảnh gif của thuật toán Backtracking tương ứng với 2 kiểu di chuyển của quái vật:
+![Backtracking](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Backtracking-Normal_Enemy.gif)
+
 # 2.6. Thuật toán học tăng cường (Reinforcement Learning)
 Thuật toán được chọn: Q-Learning
 
@@ -122,6 +129,9 @@ Hiệu suất và ứng dụng trong trò chơi:
 - Ưu điểm: Không cần mô hình môi trường trước và có thể học các chiến lược phức tạp.
 
 - Nhược điểm: Đòi hỏi lượng lớn dữ liệu (tương tác) để học các giá trị Q tối ưu, có thể tốn thời gian và tài nguyên trong môi trường trò chơi thời gian thực. Việc xác định hàm phần thưởng phù hợp và các tham số (tốc độ học, hệ số chiết khấu) đòi hỏi thử nghiệm kỹ lưỡng. Trong dự án, do phạm vi và yêu cầu về giải pháp tìm đường trực tiếp, Q-Learning không được triển khai làm thuật toán chính cho việc tìm đường của quái vật, dù được nghiên cứu về khả năng áp dụng.
+
+Dưới đây là ảnh gif của thuật toán Q-Learning tương ứng với 2 kiểu di chuyển của quái vật:
+
 
 # 3. Kết luận
 Một số kết quả đạt được khi thực hiện project này:
