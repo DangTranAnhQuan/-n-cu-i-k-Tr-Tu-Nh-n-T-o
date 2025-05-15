@@ -49,9 +49,9 @@ BFS (Breadth-First Search - Tìm kiếm theo chiều rộng):
 - Nhược điểm: Có thể tốn kém hơn về mặt tài nguyên bộ nhớ so với các thuật toán có thông tin như A*, đặc biệt là trong các bản đồ có nhiều nhánh và đường đi khác nhau, vì nó cần lưu trữ tất cả các vị trí đã được khám phá.
 
 Dưới đây là 2 ảnh gif của thuật toán BFS tương ứng với 2 kiểu di chuyển của quái vật:
-![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-Normal_Enemy.gif)
+![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-Normal_Enemy_1.gif)
 
-![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-FlyingDemon.gif)
+![BFS](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/BFS-FlyingDemon_1.gif)
 # 2.2. Các thuật toán Tìm kiếm có thông tin
 Các thành phần chính của bài toán tìm kiếm và solution:
 
@@ -68,9 +68,9 @@ A (A Star):*
 - A* sử dụng hàng đợi ưu tiên để lưu trữ các vị trí cần xét, với ưu tiên xác định bởi tổng chi phí đã đi (g) và chi phí ước tính đến đích (h).
 
 Dưới đây là 2 ảnh gif của thuật toán A* tương ứng với 2 kiểu di chuyển của quái vật:
-![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Star-Normal_Enemy.gif)
+![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Star-Normal_Enemy_1.gif)
 
-![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Start-FlyingDemon.gif)
+![Astar](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/A_Start-FlyingDemon_1.gif)
 # 2.3. Các thuật toán Tìm kiếm cục bộ (Local Search)
 Thuật toán được chọn: Steepest Ascent Hill Climbing (Leo đồi dốc nhất)
 
