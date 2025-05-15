@@ -84,7 +84,7 @@ Hiệu suất và ứng dụng trong trò chơi:
 - Nhược điểm: Rất dễ bị kẹt ở các điểm tối ưu cục bộ (ví dụ: quái vật đi vào ngõ cụt dù có đường vòng tốt hơn ở xa). Không đảm bảo tìm ra đường đi tối ưu toàn cục hoặc thậm chí tìm được đường đi trong mọi trường hợp phức tạp. Trong dự án, thuật toán này gặp một số lỗi với quái vật bay do không gian trạng thái lớn và không được chọn làm thuật toán tìm đường chính.
 
 Dưới đây là 2 ảnh gif của thuật toán Steepest Ascent Hill Climbing tương ứng với 2 kiểu di chuyển của quái vật:
-![Steepest Ascent Hill Climbing](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Stepest_HC-Normal_Enemy.gif)
+![Steepest Ascent Hill Climbing](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Stepest_HC-Normal_Enemy_1.gif)
 
 ![Steepest Ascent Hill Climbing](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Steepest_ascen_Hill_Climbing_FlyingDemon.gif)
 # 2.4. Các thuật toán Tìm kiếm trong môi trường phức tạp
