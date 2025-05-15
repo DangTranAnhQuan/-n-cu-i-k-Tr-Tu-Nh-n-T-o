@@ -100,7 +100,7 @@ Hiệu suất và ứng dụng trong trò chơi:
 - Nhược điểm: Bài toán tìm đường của một quái vật đơn lẻ thường là chuỗi các lựa chọn OR, không có cấu trúc AND phức tạp. Việc áp dụng And-Or Search có thể trở nên phức tạp không cần thiết và kém hiệu quả hơn A* cho việc tìm đường đơn thuần. Trong dự án, thuật toán này bị giới hạn không gian tìm kiếm, hiệu suất không tốt và gây giật lag khi gặp quái vật dạng bay.
 
 Dưới đây là 2 ảnh gif của thuật toán And Or Search tương ứng với 2 kiểu di chuyển của quái vật:
-![AndOrSearch](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/And_Or-Normal_Enemy.gif)
+![AndOrSearch](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/And_Or-Normal_Enemy_1.gif)
 
 ![AndOrSearch](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/And_Or-FlyingDemon.gif)
 # 2.5. Các thuật toán Tìm kiếm trong môi trường có ràng buộc
