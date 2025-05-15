@@ -116,7 +116,7 @@ Hiệu suất và ứng dụng trong trò chơi:
 - Nhược điểm: Bài toán tìm đường của quái vật đòi hỏi quyết định nhanh chóng trong thời gian thực. Backtracking, với bản chất thử và sai, có thể không đủ hiệu quả. Việc mô hình hóa bài toán tìm đường như một CSP có thể phức tạp và không tự nhiên bằng các thuật toán tìm đường chuyên dụng. Trong dự án, nó không được xem là giải pháp chính cho tìm đường của quái vật do yêu cầu về tốc độ và có thể vẽ ra đường đi, tuy nhiên cũng gặp tình trạng giật lag khi tiếp cận quái vật dạng bay theo hướng bên dưới và bên trên.
 
 Dưới đây là 2 ảnh gif của thuật toán Backtracking tương ứng với 2 kiểu di chuyển của quái vật:
-![Backtracking](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Backtracking-Normal_Enemy.gif)
+![Backtracking](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Backtracking-Normal_Enemy_1.gif)
 
 ![Backtracking](https://github.com/DangTranAnhQuan/BaoCaoCuoiKyTTNT_Nhom10/blob/main/Backtracking-FlyingDemon.gif)
 # 2.6. Thuật toán học tăng cường (Reinforcement Learning)
